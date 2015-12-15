@@ -1,0 +1,22 @@
+<%= form_for([@user, @shorturl]) do |f| %>
+  <% if @shorturl.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@shorturl.errors.count, "error") %> prohibited this shorturl from being saved:</h2>
+
+      <ul>
+      <% @shorturl.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :original_url %><br> You must included one of the prefixes http:// or https://
+    <%= f.text_field :original_url %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

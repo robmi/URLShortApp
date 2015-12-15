@@ -1,0 +1,27 @@
+<h1>Listing Shortvisits for <%= @shorturl.original_url %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ip</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Country</th>
+      <th>Geolocate</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @shortvisits.each do |shortvisit| %>
+      <tr>
+        <td><%= shortvisit.ip %></td>
+        <td><%= shortvisit.city %></td>
+        <td><%= shortvisit.state %></td>
+        <td><%= shortvisit.country %></td>
+        <td><%= link_to 'Geolocate', geolocate_shorturl_shortvisit_path(@shorturl, shortvisit) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

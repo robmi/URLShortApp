@@ -1,0 +1,12 @@
+/home/rob/.rbenv/versions/2.2.3/bin/ruby -r ./siteconf20151213-29127-iv3fok.rb extconf.rb
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling rubymain.cpp
+compiling mapper.cpp
+linking shared-object fastfilereaderext.so
+
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 fastfilereaderext.so ./.gem.20151213-29127-skky3z

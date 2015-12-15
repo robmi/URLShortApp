@@ -1,0 +1,25 @@
+<h1>Shorturls#show</h1>
+<p>Find me in app/views/shorturls/show.html.erb</p>
+<p>
+  <strong>Original url:</strong>
+  <%= @shorturl.original_url %>
+</p>
+
+<p>
+  <strong>Short Url:</strong>
+  <%= @shorturl.shorturl %>
+</p>
+
+<p>
+  <strong>Visits count:</strong>
+  <%= @shorturl.visits_count %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @shorturl.user.name %>
+</p>
+
+<%= link_to 'ShortVisits', shorturl_shortvisits_path(@shorturl) %>
+
+<%= link_to 'Back', user_shorturls_path(@user) %>

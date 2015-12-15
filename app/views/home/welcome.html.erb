@@ -1,0 +1,5 @@
+<h1>Home#welcome</h1>
+
+<% if current_user %>
+  <%= link_to 'Your Short urls', user_shorturls_path(current_user) %>
+<% end %>

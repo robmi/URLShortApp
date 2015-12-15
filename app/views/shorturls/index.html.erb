@@ -1,0 +1,32 @@
+<h1>Shorturls#index</h1>
+
+<h1>Listing Shorturls</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Original url</th>
+      <th>Short Url</th>
+      <th>Visits count</th>
+      <th>User</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @shorturls.each do |shorturl| %>
+      <tr>
+        <td><%= shorturl.original_url %></td>
+        <td><%= shorturl.shorturl %></td>
+        <td><%= shorturl.visits_count %></td>
+        <td><%= shorturl.user.name %></td>
+        <td><%= link_to 'Show', user_shorturl_path(@user, shorturl) %></td>
+        <td><%= link_to 'Destroy', user_shorturl_path(@user, shorturl), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Shorturl', new_user_shorturl_path(@user) %>
